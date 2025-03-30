@@ -1,6 +1,6 @@
 🚦 SafeLight-Server
 
-Safelight-Server는 시각장애인의 안전한 보행을 지원하기 위한 보행보조 애플리케이션 **"SafeLight"**의 백엔드 서버입니다.
+Safelight-Server는 시각장애인의 안전한 보행을 지원하기 위한 보행보조 애플리케이션 SafeLight의 백엔드 서버입니다.
 
 🌟 주요 기능
 
