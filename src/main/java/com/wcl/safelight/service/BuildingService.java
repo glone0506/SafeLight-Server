@@ -20,15 +20,19 @@ public class BuildingService {
     @Transactional(readOnly = true)
     public List<EntranceCoordinateDTO> getEntranceCoordinatesByBuildingName(String buildingName) {
         BuildingInfo building = buildingInfoRepository.findByName(buildingName)
-                .orElseThrow(() -> new RuntimeException("건물을 찾을 수 없습니다: " + buildingName));
+                .orElseThrow(() -> new IllegalArgumentException("건물을 찾을 수 없습니다: " + buildingName));
 
         return building.getEntrances().stream()
-                .map(this::convertToCoordinateDTO)
-                .collect(Collectors.toList());
+                .map(entrance -> new EntranceCoordinateDTO(
+                        entrance.getEntranceName(),
+                        entrance.getLatitude(),
+                        entrance.getLongitude()))
+                .toList();
     }
 
     private EntranceCoordinateDTO convertToCoordinateDTO(EntranceInfo entranceInfo) {
         return new EntranceCoordinateDTO(
+                entranceInfo.getEntranceName(),
                 entranceInfo.getLatitude(),
                 entranceInfo.getLongitude()
         );

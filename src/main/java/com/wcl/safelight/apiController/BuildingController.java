@@ -1,4 +1,4 @@
-package com.wcl.safelight.controller;
+package com.wcl.safelight.apiController;
 
 import com.wcl.safelight.dto.EntranceCoordinateDTO;
 import com.wcl.safelight.service.BuildingService;
