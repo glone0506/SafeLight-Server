@@ -22,4 +22,9 @@ public class BuildingController {
         List<EntranceCoordinateDTO> coordinates = buildingService.getEntranceCoordinatesByBuildingName(buildingName);
         return ResponseEntity.ok(coordinates);
     }
+
+    @GetMapping("/test")
+    public String test(){
+        return "test!!";
+    }
 }
